@@ -1,12 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
+using ll = long long;
+
+int n;
 
 struct {
 private:
-    int t[10101];
+    ll t[10101];
 public:
-    int sum(int i) { int s = 0; while (i) s += t[i], i -= i&-i; return s; }
-    void add(int i, int x) { while (i) t[i] += x, i += i&-i; }
+    ll sum(int i) { ll s = 0; while (i) s += t[i], i -= i&-i; return s; }
+    void add(int i, int x) { while (i <= n) t[i] += x, i += i&-i; }
 } fenwick;
 
 int main() {
